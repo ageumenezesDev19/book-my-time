@@ -35,7 +35,7 @@ export function ClaimUsernameForm() {
       <Form as="form" onSubmit={handleSubmit(handleClaimUsername)}>
         <TextInput
           size="sm"
-          prefix="book-my-time.com/"
+          prefix="bookmytime.com/"
           placeholder="seu-usuário"
           {...register('username')}
           onPointerEnterCapture={undefined}

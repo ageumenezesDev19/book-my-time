@@ -6,7 +6,7 @@ import {
   Text,
   TextInput,
 } from '@ignite-ui/react'
-// import { api } from "../../../lib/axios"
+import { api } from '../../../lib/axios'
 import { Container, Header } from '../styles'
 import {
   FormError,
@@ -86,8 +86,6 @@ export default function TimeIntervals() {
     },
   })
 
-  // console.log(errors)
-
   const { fields } = useFieldArray({
     control,
     name: 'intervals',
@@ -98,9 +96,12 @@ export default function TimeIntervals() {
   const intervals = watch('intervals')
 
   async function handleSetTimeIntervals(data: unknown) {
-    const formData = data as TimeIntervalsFormOutput
+    // unknown is because a zod bug
+    const { intervals } = data as TimeIntervalsFormOutput
 
-    console.log(formData)
+    await api.post('/users/time-intervals', {
+      intervals,
+    })
   }
 
   return (

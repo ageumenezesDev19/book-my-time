@@ -1,7 +1,10 @@
 {
   "cSpell.words": [
     "bookmytime",
+    "camelcase",
+    "dayjs",
     "hookform",
-    "nextauth"
+    "nextauth",
+    "tanstack"
   ]
 }

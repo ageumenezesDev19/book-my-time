@@ -5,6 +5,7 @@
     "dayjs",
     "hookform",
     "nextauth",
+    "schedulings",
     "tanstack"
   ]
 }

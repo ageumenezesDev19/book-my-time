@@ -3,7 +3,7 @@ CREATE TABLE `users` (
     `id` VARCHAR(191) NOT NULL,
     `username` VARCHAR(191) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
-    `bio` VARCHAR(191) NULL,
+    `bio` TEXT NULL,
     `email` VARCHAR(191) NULL,
     `avatar_url` VARCHAR(191) NULL,
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
@@ -20,12 +20,12 @@ CREATE TABLE `accounts` (
     `type` VARCHAR(191) NOT NULL,
     `provider` VARCHAR(191) NOT NULL,
     `provider_account_id` VARCHAR(191) NOT NULL,
-    `refresh_token` VARCHAR(191) NULL,
-    `access_token` VARCHAR(191) NULL,
+    `refresh_token` TEXT NULL,
+    `access_token` TEXT NULL,
     `expires_at` INTEGER NULL,
     `token_type` VARCHAR(191) NULL,
     `scope` VARCHAR(191) NULL,
-    `id_token` VARCHAR(191) NULL,
+    `id_token` TEXT NULL,
     `session_state` VARCHAR(191) NULL,
 
     UNIQUE INDEX `accounts_provider_provider_account_id_key`(`provider`, `provider_account_id`),
@@ -59,11 +59,11 @@ CREATE TABLE `schedulings` (
     `id` VARCHAR(191) NOT NULL,
     `date` DATETIME(3) NOT NULL,
     `name` VARCHAR(191) NOT NULL,
-    `observation` VARCHAR(191) NULL,
+    `email` VARCHAR(191) NOT NULL,
+    `observations` VARCHAR(191) NULL,
     `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `user_id` VARCHAR(191) NOT NULL,
 
-    INDEX `schedulings_user_id_idx`(`user_id`),
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 

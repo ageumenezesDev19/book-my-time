@@ -5,6 +5,7 @@ import { ArrowRight, Check } from 'phosphor-react'
 // import { api } from "../../../lib/axios"
 import { Container, Header } from '../styles'
 import { AuthError, ConnectBox, ConnectItem } from './styles'
+import { NextSeo } from 'next-seo'
 
 export default function ConnectCalendar() {
   const session = useSession()
@@ -23,6 +24,8 @@ export default function ConnectCalendar() {
 
   return (
     <>
+      <NextSeo title="Conecte sua agenda do google | Book My Time" noindex />
+
       <Container>
         <Header>
           <Heading as="strong">Conecte sua agenda!</Heading>

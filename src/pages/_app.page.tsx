@@ -1,4 +1,5 @@
 import '../lib/dayjs'
+import { DefaultSeo } from 'next-seo'
 
 import { globalStyles } from '@/styles/global'
 import type { AppProps } from 'next/app'
@@ -16,6 +17,14 @@ export default function App({
   return (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={session}>
+        <DefaultSeo
+          openGraph={{
+            type: 'website',
+            locale: 'pt_BR',
+            url: 'https://www.bookmytime.com.br/',
+            siteName: 'Book My Time',
+          }}
+        />
         <Component {...pageProps} />
       </SessionProvider>
     </QueryClientProvider>
